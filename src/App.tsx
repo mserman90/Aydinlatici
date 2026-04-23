@@ -4,16 +4,17 @@
  */
 
 import React, { useState, useEffect, useRef } from 'react';
-import { GoogleGenAI } from '@google/genai';
+
 import { 
   BookOpen, BrainCircuit, Activity, Calculator, FlaskConical, 
   Globe2, PenTool, LayoutDashboard, ShieldCheck, HelpCircle, 
-  ChevronRight, AlertTriangle, Send, Loader2, Target, Menu, X, ThumbsUp, ThumbsDown, UserCircle,
+  
   Trophy, Medal, Flame, Star, Award, MessageSquare, Settings, ClipboardList
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 import { cn } from './lib/utils';
+import { callHuggingFaceAI, AVAILABLE_MODELS } from './lib/pollinations';
 
 // --- ROZET (BADGE) TANIMLAMALARI ---
 const BADGE_DEFINITIONS: Record<string, { name: string, desc: string, icon: any, color: string, bg: string }> = {
